@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/person.css}" rel="stylesheet" />
+</head>
+<body>
+    <h1 id="h1">PERSON TABLE</h1>
+<table class="content-table">
+    <thead>
+    <tr>
+        <th>Person ID</th>
+        <th>Person First Name</th>
+        <th>Person Last Name</th>
+        <th>Detail</th>
+        <th>Update</th>
+        <th>Delete</th>
+        <th><a th:href="@{'/person/new'}">Add User</a></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="person : ${people}">
+        <td th:text="${person.id}">1</td>
+        <td th:text="${person.firstName}">Domenic</td>
+        <td th:text="${person.lastName}">88,110</td>
+        <td><a th:href="@{'/person/' + ${person.id}}">View</a></td>
+        <td><a th:href="@{'/person/' + ${person.id} + '/update'}">Update</a></td>
+        <td><a th:href="@{'/person/' + ${person.id} + '/delete'}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/person.css}" rel="stylesheet" />
+</head>
+<body>
+<h1 id="h1">Person Detail</h1>
+<table class="content-table">
+    <thead>
+    <tr>
+        <th>Person ID</th>
+        <th>Person First Name</th>
+        <th>Person Last Name</th>
+        <th>Person Birth Date</th>
+        <th><a th:href="@{'/person'}">Back</a></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="person : ${person}">
+        <td th:text="${person.id}">1</td>
+        <td th:text="${person.firstName}">Domenic</td>
+        <td th:text="${person.lastName}">88,110</td>
+        <td th:text="${person.birthDate}">dcode</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
